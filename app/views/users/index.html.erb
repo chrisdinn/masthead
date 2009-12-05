@@ -1,0 +1,6 @@
+<h1>Users</h1>
+<ol>
+<% for user in @users %>
+	<li id="user_<%= user.id %>"><%= user.email %></li>
+<% end %>
+</ol>
