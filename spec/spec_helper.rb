@@ -5,6 +5,9 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 
+require "email_spec/helpers"
+require "email_spec/matchers"
+
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
 
@@ -20,6 +23,8 @@ Spec::Runner.configure do |config|
   config.use_instantiated_fixtures  = false
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
 
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
   # == Fixtures
   #
   # You can declare fixtures for each example_group like this:

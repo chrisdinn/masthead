@@ -3,7 +3,8 @@ class Clearance::UsersController < ApplicationController
   filter_parameter_logging :password
   
   def index
-    @users = User.all
+    @users = ::User.all
+    @user_invites = ::UserInvite.all
     render :template => 'users/index'
   end
 

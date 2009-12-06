@@ -3,7 +3,7 @@ Given /^there are users in the directory$/ do
 end
 
 Then /^I should see all the users$/ do
-  response.should have_selector("ol") do |users|
+  response.should have_selector("ol#users") do |users|
     @users.each do |user|
       users.should have_selector("li#user_#{user.id}")
     end

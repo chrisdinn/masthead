@@ -12,7 +12,9 @@ module NavigationHelpers
       new_password_path
     when /the users list page/i
       users_path
-    
+      
+    when /the new user invite page/
+      new_user_invite_path
     # Add more page name => path mappings here
     
     else

@@ -26,3 +26,4 @@ config.gem 'webrat',      :lib => false,        :version => '>=0.5.3' unless Fil
 config.gem 'rspec',       :lib => false,        :version => '>=1.2.9' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
 config.gem 'rspec-rails', :lib => false,        :version => '>=1.2.9' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 config.gem "factory_girl" 
+config.gem 'email_spec'

@@ -1,6 +1,12 @@
 <h1>Users</h1>
-<ol>
+<ol id="users">
 <% for user in @users %>
 	<li id="user_<%= user.id %>"><%= user.email %></li>
+<% end %>
+</ol>
+<h1>User Invitations</h1>
+<ol id="user_invites">
+<% for user_invite in @user_invites %>
+	<li id="user_invite_<%= user_invite.id %>"><%= user_invite.email %></li>
 <% end %>
 </ol>

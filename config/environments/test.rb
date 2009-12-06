@@ -4,6 +4,8 @@ config.gem 'cucumber'
 config.gem 'cucumber', :lib => false, :version => '>=0.4.4'
 config.gem 'rspec-rails', :lib => false, :version => '>=1.2.9'
 config.gem 'shoulda'
+config.gem 'factory_girl', :version => '>=1.2.3'
+config.gem 'email_spec'
 
 # The test environment is used exclusively to run your application's
 # test suite.  You never need to work with it otherwise.  Remember that

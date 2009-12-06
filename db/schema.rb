@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091205164002) do
+ActiveRecord::Schema.define(:version => 20091205195959) do
+
+  create_table "user_invites", :force => true do |t|
+    t.string   "email"
+    t.string   "invite_code", :limit => 40
+    t.datetime "invited_at"
+    t.datetime "redeemed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_invites", ["id", "email"], :name => "index_user_invites_on_id_and_email"
+  add_index "user_invites", ["id", "invite_code"], :name => "index_user_invites_on_id_and_invite_code"
 
   create_table "users", :force => true do |t|
     t.string   "email"
