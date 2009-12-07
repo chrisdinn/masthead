@@ -10,3 +10,7 @@
 	<li id="user_invite_<%= user_invite.id %>"><%= user_invite.email %></li>
 <% end %>
 </ol>
+
+<% if signed_in? %>
+<h2>Now you are signed in</h2>
+<% end %>
