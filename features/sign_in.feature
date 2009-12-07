@@ -8,7 +8,7 @@ Feature: Sign in
       Given no user exists with an email of "email@person.com"
       When I visit the sign in page
       And I sign in as "email@person.com/password"
-      Then I should notice "Redirecting to sign in page" in the response
+      Then I should be redirected to the login page
       And I should be signed out
 
 	@checkpoint
@@ -16,7 +16,7 @@ Feature: Sign in
       Given I signed up with "email@person.com/password"
       When I visit the sign in page
       And I sign in as "email@person.com/password"
-      Then I should notice "Redirecting to sign in page" in the response
+      Then I should be redirected to the login page
       And I should be signed out
 
 	@checkpoint
@@ -24,7 +24,7 @@ Feature: Sign in
       Given I am signed up and confirmed as "email@person.com/password"
       When I visit the sign in page
       And I sign in as "email@person.com/wrongpassword"
-      Then I should notice "Redirecting to sign in page" in the response
+      Then I should be redirected to the login page
       And I should be signed out
 
 	@checkpoint

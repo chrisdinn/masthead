@@ -7,13 +7,15 @@ When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
   @browser.get "/"
 end
 
-When /^I should notice "([^\"]*)" in the response$/ do |text|
-  @browser.last_response.body.should include(text)
+Then /^I should be redirected to the login page$/ do
+  @browser.last_response.should be_redirect
+  @browser.last_response.location.should match("/sso/login")
 end
+
 
 Then /^I should be signed out$/ do
   @browser.get '/'
-  @browser.last_response.status.should == 301
+  @browser.last_response.should be_redirect
 end
 
 Then /^I should be signed in$/ do

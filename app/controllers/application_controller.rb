@@ -9,4 +9,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  before_filter :go_sign_in
+
+  private
+  
+  def go_sign_in
+    unless signed_in?
+      redirect_to "/sso/login"
+      false
+    else
+      true
+    end
+  end
 end
