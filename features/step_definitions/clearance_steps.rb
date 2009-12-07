@@ -30,14 +30,6 @@ end
 
 # Session
 
-Then /^I should be signed in$/ do
-  assert controller.signed_in?
-end
-
-Then /^I should be signed out$/ do
-  assert ! controller.signed_in?
-end
-
 When /^session is cleared$/ do
   request.reset_session
   controller.instance_variable_set(:@_current_user, nil)
@@ -91,13 +83,6 @@ end
 
 # Actions
 
-When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
-  When %{I go to the sign in page}
-  And %{I fill in "Email" with "#{email}"}
-  And %{I fill in "Password" with "#{password}"}
-  And %{I press "Sign In"}
-end
-
 When /^I sign out$/ do
   visit '/session', :delete
 end
@@ -112,9 +97,4 @@ When /^I update my password with "(.*)\/(.*)"$/ do |password, confirmation|
   And %{I fill in "Choose password" with "#{password}"}
   And %{I fill in "Confirm password" with "#{confirmation}"}
   And %{I press "Save this password"}
-end
-
-When /^I return next time$/ do
-  When %{session is cleared}
-  And %{I go to the homepage}
 end

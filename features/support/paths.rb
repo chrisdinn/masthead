@@ -6,7 +6,7 @@ module NavigationHelpers
       root_path
 
     when /the sign in page/i
-      new_session_path
+      '/sso/login'
     when /the password reset request page/i
       new_password_path
     when /the users list page/i

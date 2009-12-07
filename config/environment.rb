@@ -27,6 +27,11 @@ Rails::Initializer.run do |config|
     
   config.gem "sinatra",
     :version => ">=0.9.2"
+    
+  config.gem "checkpoint", 
+    :version => '0.0.0'
+    
+  config.middleware.use 'Checkpoint::IDCheck'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

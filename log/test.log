@@ -31254,3 +31254,2097 @@ Rendering template within layouts/user_invites
 Rendering user_invites/new
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/user_invites/new]
   [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (21.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUserInvite Columns (27.1ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user2@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.3ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:11', NULL, NULL, NULL, 'user2@example.com', '2009-12-07 14:42:11')[0m
+  [4;36;1mUserInvite Load (16.8ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user2@example.com' AND `user_invites`.id <> 1) LIMIT 1[0m
+  [4;35;1mUserInvite Update (6.6ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:11', `invite_code` = '453fcde29b2d66e9d344d4bfbb21e3ab298af632', `email` = 'user2@example.com', `updated_at` = '2009-12-07 14:42:11' WHERE `id` = 1[0m
+Sent mail to user2@example.com
+
+Date: Mon, 7 Dec 2009 09:42:11 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user2@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14442106_4d0f1a37e16e
+
+
+--mimepart_4b1d14442106_4d0f1a37e16e
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/453fcde29b2d66e9d344d4bfbb21e3ab298af=
+632">Start using Hot Ink</a>=
+
+--mimepart_4b1d14442106_4d0f1a37e16e--
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user1@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (12.7ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user4@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user4@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user4@example.com' AND `user_invites`.id <> 2) LIMIT 1[0m
+  [4;35;1mUserInvite Update (16.7ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = 'acc089abe6c859f75472f603af74803ff2abea5b', `email` = 'user4@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 2[0m
+Sent mail to user4@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user4@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14442cef5_4d0f1a37e214
+
+
+--mimepart_4b1d14442cef5_4d0f1a37e214
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/acc089abe6c859f75472f603af74803ff2abe=
+a5b">Start using Hot Ink</a>=
+
+--mimepart_4b1d14442cef5_4d0f1a37e214--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user5@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com' AND `user_invites`.id <> 3) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '0622861c0a78c450c2a8eead56dba1865feffab9', `email` = 'user5@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 3[0m
+Sent mail to user5@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user5@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14442fc5e_4d0f1a37e3b9
+
+
+--mimepart_4b1d14442fc5e_4d0f1a37e3b9
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/0622861c0a78c450c2a8eead56dba1865feff=
+ab9">Start using Hot Ink</a>=
+
+--mimepart_4b1d14442fc5e_4d0f1a37e3b9--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user3@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '0622861c0a78c450c2a8eead56dba1865feffab9') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('fdee89bb82800d0a943ba38be507468f10fcbdf8', 'a6c83559c43f97d7a6218ef24c2602096bc8a068', '2009-12-07 14:42:12', NULL, '4b389167c9222fcd2188ca605a222a1b9dd230ed', 'user3@example.com', 0, '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '0622861c0a78c450c2a8eead56dba1865feffab9') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com' AND `user_invites`.id <> 3) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user6@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com' AND `user_invites`.id <> 4) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = 'b32f699548535a959f726f90a367297e32213c2b', `email` = 'user6@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 4[0m
+Sent mail to user6@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user6@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14444a95e_4d0f1a37e461
+
+
+--mimepart_4b1d14444a95e_4d0f1a37e461
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/b32f699548535a959f726f90a367297e32213=
+c2b">Start using Hot Ink</a>=
+
+--mimepart_4b1d14444a95e_4d0f1a37e461--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user7@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'b32f699548535a959f726f90a367297e32213c2b') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('fdee89bb82800d0a943ba38be507468f10fcbdf8', 'a6c83559c43f97d7a6218ef24c2602096bc8a068', '2009-12-07 14:42:12', NULL, '4b389167c9222fcd2188ca605a222a1b9dd230ed', 'user7@example.com', 0, '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'b32f699548535a959f726f90a367297e32213c2b') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com' AND `user_invites`.id <> 4) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`id` = 4) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user8@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.3ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user8@example.com', '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user8@example.com' AND `user_invites`.id <> 5) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '3221b85f22c3a1282c19f47a38ce63ef88320e69', `email` = 'user8@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 5[0m
+Sent mail to user8@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user8@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14445044e_4d0f1a37e52c
+
+
+--mimepart_4b1d14445044e_4d0f1a37e52c
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/3221b85f22c3a1282c19f47a38ce63ef88320=
+e69">Start using Hot Ink</a>=
+
+--mimepart_4b1d14445044e_4d0f1a37e52c--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` IS NULL AND `user_invites`.id <> 5) LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user9@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (8.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com' AND `user_invites`.id <> 6) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.5ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = 'c0f858f89ecab88b6064a2ca490b758101aabee7', `email` = 'user9@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 6[0m
+Sent mail to user9@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user9@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d1444687c0_4d0f1a37e62d
+
+
+--mimepart_4b1d1444687c0_4d0f1a37e62d
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/c0f858f89ecab88b6064a2ca490b758101aab=
+ee7">Start using Hot Ink</a>=
+
+--mimepart_4b1d1444687c0_4d0f1a37e62d--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user10@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user10@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user10@example.com' AND `user_invites`.id <> 7) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = 'c6590cdb9790f58e0378a6717cb4b845cba2b0f4', `email` = 'user10@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 7[0m
+Sent mail to user10@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user10@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14446cbaa_4d0f1a37e78f
+
+
+--mimepart_4b1d14446cbaa_4d0f1a37e78f
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/c6590cdb9790f58e0378a6717cb4b845cba2b=
+0f4">Start using Hot Ink</a>=
+
+--mimepart_4b1d14446cbaa_4d0f1a37e78f--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme' AND `user_invites`.id <> 7) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme@ca' AND `user_invites`.id <> 7) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user11@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user11@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user11@example.com' AND `user_invites`.id <> 8) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.4ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '4f77a13eca730bf875ade2aba5e11ea0a5b79564', `email` = 'user11@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 8[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user12@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user12@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user12@example.com' AND `user_invites`.id <> 9) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '1868332f3176e3e2de76c1416f11c84459cfa147', `email` = 'user12@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 9[0m
+Sent mail to user12@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user12@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d144472bf5_4d0f1a37e840
+
+
+--mimepart_4b1d144472bf5_4d0f1a37e840
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/1868332f3176e3e2de76c1416f11c84459cfa=
+147">Start using Hot Ink</a>=
+
+--mimepart_4b1d144472bf5_4d0f1a37e840--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user13@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.3ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user13@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user13@example.com' AND `user_invites`.id <> 10) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = 'b67b183aef8978ba7efafab7c028d0b00f0cf979', `email` = 'user13@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 10[0m
+Sent mail to user13@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user13@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14447732d_4d0f1a37e984
+
+
+--mimepart_4b1d14447732d_4d0f1a37e984
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/b67b183aef8978ba7efafab7c028d0b00f0cf=
+979">Start using Hot Ink</a>=
+
+--mimepart_4b1d14447732d_4d0f1a37e984--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'b67b183aef8978ba7efafab7c028d0b00f0cf979') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user14@example.com', '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com' AND `user_invites`.id <> 11) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '8147a3d9ab14f5a81be5d84721126ee92d95bac2', `email` = 'user14@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 11[0m
+Sent mail to user14@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user14@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14447ac81_4d0f1a37e1029
+
+
+--mimepart_4b1d14447ac81_4d0f1a37e1029
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/8147a3d9ab14f5a81be5d84721126ee92d95b=
+ac2">Start using Hot Ink</a>=
+
+--mimepart_4b1d14447ac81_4d0f1a37e1029--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com' AND `user_invites`.id <> 11) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 11[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '8147a3d9ab14f5a81be5d84721126ee92d95bac2') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user15@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com' AND `user_invites`.id <> 12) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '98923be32fb64d9bf767f95a24dc1e20fcaad911', `email` = 'user15@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 12[0m
+Sent mail to user15@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user15@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14447f2bd_4d0f1a37e11b3
+
+
+--mimepart_4b1d14447f2bd_4d0f1a37e11b3
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/98923be32fb64d9bf767f95a24dc1e20fcaad=
+911">Start using Hot Ink</a>=
+
+--mimepart_4b1d14447f2bd_4d0f1a37e11b3--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com' AND `user_invites`.id <> 12) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 12[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user16@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user16@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user16@example.com' AND `user_invites`.id <> 13) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '3e418443df3371e74c97b329763e74c8cf96f638', `email` = 'user16@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 13[0m
+Sent mail to user16@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user16@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14448380a_4d0f1a37e12ba
+
+
+--mimepart_4b1d14448380a_4d0f1a37e12ba
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/3e418443df3371e74c97b329763e74c8cf96f=
+638">Start using Hot Ink</a>=
+
+--mimepart_4b1d14448380a_4d0f1a37e12ba--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user17@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user17@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user17@example.com' AND `user_invites`.id <> 14) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '8c9e4f00721835fa3e66b9594b7bfe70103cf41e', `email` = 'user17@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 14[0m
+Sent mail to user17@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user17@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d144486e14_4d0f1a37e137e
+
+
+--mimepart_4b1d144486e14_4d0f1a37e137e
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/8c9e4f00721835fa3e66b9594b7bfe70103cf=
+41e">Start using Hot Ink</a>=
+
+--mimepart_4b1d144486e14_4d0f1a37e137e--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user18@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user18@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user18@example.com' AND `user_invites`.id <> 15) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '87dc5e3daf9740d9d7e6fe143d9345103deb9268', `email` = 'user18@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 15[0m
+Sent mail to user18@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user18@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14448a459_4d0f1a37e1436
+
+
+--mimepart_4b1d14448a459_4d0f1a37e1436
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/87dc5e3daf9740d9d7e6fe143d9345103deb9=
+268">Start using Hot Ink</a>=
+
+--mimepart_4b1d14448a459_4d0f1a37e1436--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user20@example.com', '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com' AND `user_invites`.id <> 16) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.4ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '855c9171de2f71c24a3c936ce67f0cff89ab5fb5', `email` = 'user20@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 16[0m
+Sent mail to user20@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user20@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14448e9ca_4d0f1a37e154d
+
+
+--mimepart_4b1d14448e9ca_4d0f1a37e154d
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/855c9171de2f71c24a3c936ce67f0cff89ab5=
+fb5">Start using Hot Ink</a>=
+
+--mimepart_4b1d14448e9ca_4d0f1a37e154d--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '855c9171de2f71c24a3c936ce67f0cff89ab5fb5') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 09:42:12) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"855c9171de2f71c24a3c936ce67f0cff89ab5fb5", "password"=>"[FILTERED]", "email"=>"user19@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"855c9171de2f71c24a3c936ce67f0cff89ab5fb5"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user19@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '855c9171de2f71c24a3c936ce67f0cff89ab5fb5') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('fdee89bb82800d0a943ba38be507468f10fcbdf8', 'a6c83559c43f97d7a6218ef24c2602096bc8a068', '2009-12-07 14:42:12', NULL, '4b389167c9222fcd2188ca605a222a1b9dd230ed', 'user19@example.com', 0, '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '855c9171de2f71c24a3c936ce67f0cff89ab5fb5') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com' AND `user_invites`.id <> 16) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 16[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 12ms (DB: 163) | 302 Found [http://test.host/users?invite_code=855c9171de2f71c24a3c936ce67f0cff89ab5fb5&user%5Bemail%5D=user19%40example.com&user%5Binvite_code%5D=855c9171de2f71c24a3c936ce67f0cff89ab5fb5&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user22@example.com', '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com' AND `user_invites`.id <> 17) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = 'ccb111d4287fd8d26446b0bb0dceadd4498e3873', `email` = 'user22@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 17[0m
+Sent mail to user22@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user22@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d144496824_4d0f1a37e16e9
+
+
+--mimepart_4b1d144496824_4d0f1a37e16e9
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/ccb111d4287fd8d26446b0bb0dceadd4498e3=
+873">Start using Hot Ink</a>=
+
+--mimepart_4b1d144496824_4d0f1a37e16e9--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'ccb111d4287fd8d26446b0bb0dceadd4498e3873') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 09:42:12) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"ccb111d4287fd8d26446b0bb0dceadd4498e3873", "password"=>"[FILTERED]", "email"=>"user21@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"ccb111d4287fd8d26446b0bb0dceadd4498e3873"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user21@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'ccb111d4287fd8d26446b0bb0dceadd4498e3873') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('fdee89bb82800d0a943ba38be507468f10fcbdf8', 'a6c83559c43f97d7a6218ef24c2602096bc8a068', '2009-12-07 14:42:12', NULL, '4b389167c9222fcd2188ca605a222a1b9dd230ed', 'user21@example.com', 0, '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'ccb111d4287fd8d26446b0bb0dceadd4498e3873') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com' AND `user_invites`.id <> 17) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 17[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 9ms (DB: 4) | 302 Found [http://test.host/users?invite_code=ccb111d4287fd8d26446b0bb0dceadd4498e3873&user%5Bemail%5D=user21%40example.com&user%5Binvite_code%5D=ccb111d4287fd8d26446b0bb0dceadd4498e3873&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.1ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user24@example.com', '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com' AND `user_invites`.id <> 18) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '795ad0c6848b6a3e55a230957c33a38080d50e54', `email` = 'user24@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 18[0m
+Sent mail to user24@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user24@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d14449d3b9_4d0f1a37e1799
+
+
+--mimepart_4b1d14449d3b9_4d0f1a37e1799
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/795ad0c6848b6a3e55a230957c33a38080d50=
+e54">Start using Hot Ink</a>=
+
+--mimepart_4b1d14449d3b9_4d0f1a37e1799--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '795ad0c6848b6a3e55a230957c33a38080d50e54') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 09:42:12) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"795ad0c6848b6a3e55a230957c33a38080d50e54", "password"=>"[FILTERED]", "email"=>"user23@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"795ad0c6848b6a3e55a230957c33a38080d50e54"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user23@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '795ad0c6848b6a3e55a230957c33a38080d50e54') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('fdee89bb82800d0a943ba38be507468f10fcbdf8', 'a6c83559c43f97d7a6218ef24c2602096bc8a068', '2009-12-07 14:42:12', NULL, '4b389167c9222fcd2188ca605a222a1b9dd230ed', 'user23@example.com', 0, '2009-12-07 14:42:12')[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '795ad0c6848b6a3e55a230957c33a38080d50e54') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com' AND `user_invites`.id <> 18) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 18[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 10ms (DB: 4) | 302 Found [http://test.host/users?invite_code=795ad0c6848b6a3e55a230957c33a38080d50e54&user%5Bemail%5D=user23%40example.com&user%5Binvite_code%5D=795ad0c6848b6a3e55a230957c33a38080d50e54&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'user23@example.com') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user26@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com' AND `user_invites`.id <> 19) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '87a04679f6dbfa23d08c7859361c41fbb25ed59a', `email` = 'user26@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 19[0m
+Sent mail to user26@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user26@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d1444a45d1_4d0f1a37e1886
+
+
+--mimepart_4b1d1444a45d1_4d0f1a37e1886
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/87a04679f6dbfa23d08c7859361c41fbb25ed=
+59a">Start using Hot Ink</a>=
+
+--mimepart_4b1d1444a45d1_4d0f1a37e1886--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '87a04679f6dbfa23d08c7859361c41fbb25ed59a') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 09:42:12) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"87a04679f6dbfa23d08c7859361c41fbb25ed59a", "password"=>"[FILTERED]", "email"=>"user25@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"87a04679f6dbfa23d08c7859361c41fbb25ed59a"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user25@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '87a04679f6dbfa23d08c7859361c41fbb25ed59a') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('fdee89bb82800d0a943ba38be507468f10fcbdf8', 'a6c83559c43f97d7a6218ef24c2602096bc8a068', '2009-12-07 14:42:12', NULL, '4b389167c9222fcd2188ca605a222a1b9dd230ed', 'user25@example.com', 0, '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '87a04679f6dbfa23d08c7859361c41fbb25ed59a') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com' AND `user_invites`.id <> 19) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 14:42:12', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 19[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 10ms (DB: 4) | 302 Found [http://test.host/users?invite_code=87a04679f6dbfa23d08c7859361c41fbb25ed59a&user%5Bemail%5D=user25%40example.com&user%5Binvite_code%5D=87a04679f6dbfa23d08c7859361c41fbb25ed59a&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = '87a04679f6dbfa23d08c7859361c41fbb25ed59a') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user28@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 14:42:12', NULL, NULL, NULL, 'user28@example.com', '2009-12-07 14:42:12')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user28@example.com' AND `user_invites`.id <> 20) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 14:42:12', `invite_code` = '9588a9edeee16cb16c01cb6e0b85bb3e52f86c6e', `email` = 'user28@example.com', `updated_at` = '2009-12-07 14:42:12' WHERE `id` = 20[0m
+Sent mail to user28@example.com
+
+Date: Mon, 7 Dec 2009 09:42:12 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user28@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d1444ab83c_4d0f1a37e19e9
+
+
+--mimepart_4b1d1444ab83c_4d0f1a37e19e9
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/9588a9edeee16cb16c01cb6e0b85bb3e52f86=
+c6e">Start using Hot Ink</a>=
+
+--mimepart_4b1d1444ab83c_4d0f1a37e19e9--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 09:42:12) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"9588a9edeee16cb16c01cb6e0b85bb3e52f86c6e", "password"=>"[FILTERED]", "email"=>"user27@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"madeupinvitecode"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user27@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` = 'madeupinvitecode') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 4ms (View: 0, DB: 3) | 200 OK [http://test.host/users?invite_code=madeupinvitecode&user%5Bemail%5D=user27%40example.com&user%5Binvite_code%5D=9588a9edeee16cb16c01cb6e0b85bb3e52f86c6e&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-12-07 09:42:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-12-07 09:42:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UserInvitesController#new (for 0.0.0.0 at 2009-12-07 09:42:12) [GET]
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 4ms (View: 0, DB: 0) | 200 OK [http://test.host/user_invites/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UserInvitesController#new (for 0.0.0.0 at 2009-12-07 09:42:12) [GET]
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUserInvite Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user2@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user2@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user2@example.com' AND `user_invites`.id <> 168) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = 'df65cebd15352163bc4c85db914c76515e63951b', `email` = 'user2@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 168[0m
+Sent mail to user2@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user2@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a358c8_5fd01a37e179
+
+
+--mimepart_4b1d410a358c8_5fd01a37e179
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/df65cebd15352163bc4c85db914c76515e639=
+51b">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a358c8_5fd01a37e179--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user1@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` IS NULL AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user4@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user4@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user4@example.com' AND `user_invites`.id <> 169) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '7b9794de1ce748674dd0ed24b1c199514ae13d10', `email` = 'user4@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 169[0m
+Sent mail to user4@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user4@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a5e192_5fd01a37e2b4
+
+
+--mimepart_4b1d410a5e192_5fd01a37e2b4
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/7b9794de1ce748674dd0ed24b1c199514ae13=
+d10">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a5e192_5fd01a37e2b4--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user5@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com' AND `user_invites`.id <> 170) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '81f45908737ee7e2de39962bafbb4a2d0691d3ef', `email` = 'user5@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 170[0m
+Sent mail to user5@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user5@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a610ba_5fd01a37e34d
+
+
+--mimepart_4b1d410a610ba_5fd01a37e34d
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/81f45908737ee7e2de39962bafbb4a2d0691d=
+3ef">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a610ba_5fd01a37e34d--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user3@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '81f45908737ee7e2de39962bafbb4a2d0691d3ef' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('dcabd9516f9b6590fb21a4b838af4a8efacb875a', '2a794388af1fc645554d507599277d9f85c2cfa1', '2009-12-07 17:53:14', NULL, '619055abd943903808de4a4cef6dd275d5419cfb', 'user3@example.com', 0, '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '81f45908737ee7e2de39962bafbb4a2d0691d3ef' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com' AND `user_invites`.id <> 170) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 170[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user6@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com' AND `user_invites`.id <> 171) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = 'deb1624ace359421798e36c1f4ee9cbc7e7c74e9', `email` = 'user6@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 171[0m
+Sent mail to user6@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user6@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a6abb0_5fd01a37e4ba
+
+
+--mimepart_4b1d410a6abb0_5fd01a37e4ba
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/deb1624ace359421798e36c1f4ee9cbc7e7c7=
+4e9">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a6abb0_5fd01a37e4ba--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user7@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'deb1624ace359421798e36c1f4ee9cbc7e7c74e9' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('dcabd9516f9b6590fb21a4b838af4a8efacb875a', '2a794388af1fc645554d507599277d9f85c2cfa1', '2009-12-07 17:53:14', NULL, '619055abd943903808de4a4cef6dd275d5419cfb', 'user7@example.com', 0, '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'deb1624ace359421798e36c1f4ee9cbc7e7c74e9' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com' AND `user_invites`.id <> 171) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 171[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`id` = 171) [0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user8@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user8@example.com', '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user8@example.com' AND `user_invites`.id <> 172) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '164df26ee8ca9927f13a151bb716e3b11881ace0', `email` = 'user8@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 172[0m
+Sent mail to user8@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user8@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a71cae_5fd01a37e5c8
+
+
+--mimepart_4b1d410a71cae_5fd01a37e5c8
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/164df26ee8ca9927f13a151bb716e3b11881a=
+ce0">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a71cae_5fd01a37e5c8--
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` IS NULL AND `user_invites`.id <> 172) LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user9@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com' AND `user_invites`.id <> 173) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '481aeec1bdd05975df70a57dc5fee63fd322e243', `email` = 'user9@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 173[0m
+Sent mail to user9@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user9@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a75d3b_5fd01a37e66a
+
+
+--mimepart_4b1d410a75d3b_5fd01a37e66a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/481aeec1bdd05975df70a57dc5fee63fd322e=
+243">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a75d3b_5fd01a37e66a--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user10@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user10@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user10@example.com' AND `user_invites`.id <> 174) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.4ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '40405f44cc7dd8be6376e948eaf143d6843b895e', `email` = 'user10@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 174[0m
+Sent mail to user10@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user10@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a79fea_5fd01a37e776
+
+
+--mimepart_4b1d410a79fea_5fd01a37e776
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/40405f44cc7dd8be6376e948eaf143d6843b8=
+95e">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a79fea_5fd01a37e776--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme' AND `user_invites`.id <> 174) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme@ca' AND `user_invites`.id <> 174) LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user11@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user11@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user11@example.com' AND `user_invites`.id <> 175) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '867fdd5f68e5eebc93b4c1d5331690bbd01eab01', `email` = 'user11@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 175[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user12@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.1ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user12@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user12@example.com' AND `user_invites`.id <> 176) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '69f55050ceb8e5122887451c584957d0afb43c4b', `email` = 'user12@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 176[0m
+Sent mail to user12@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user12@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a80267_5fd01a37e896
+
+
+--mimepart_4b1d410a80267_5fd01a37e896
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/69f55050ceb8e5122887451c584957d0afb43=
+c4b">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a80267_5fd01a37e896--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user13@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user13@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user13@example.com' AND `user_invites`.id <> 177) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = 'b4abe927f29a45fdbba1ad9f020ce72bf10d858d', `email` = 'user13@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 177[0m
+Sent mail to user13@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user13@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a8385d_5fd01a37e956
+
+
+--mimepart_4b1d410a8385d_5fd01a37e956
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/b4abe927f29a45fdbba1ad9f020ce72bf10d8=
+58d">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a8385d_5fd01a37e956--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'b4abe927f29a45fdbba1ad9f020ce72bf10d858d' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user14@example.com', '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com' AND `user_invites`.id <> 178) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = 'e02ee83f0fcc7e71ba11546456f5dd0b62a848f9', `email` = 'user14@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 178[0m
+Sent mail to user14@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user14@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a8710f_5fd01a37e10fe
+
+
+--mimepart_4b1d410a8710f_5fd01a37e10fe
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/e02ee83f0fcc7e71ba11546456f5dd0b62a84=
+8f9">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a8710f_5fd01a37e10fe--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com' AND `user_invites`.id <> 178) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.4ms)[0m   [0;1mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 178[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'e02ee83f0fcc7e71ba11546456f5dd0b62a848f9' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user15@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com' AND `user_invites`.id <> 179) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '1d4da4d1001b7448dba3c76494e42b11ec9ab031', `email` = 'user15@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 179[0m
+Sent mail to user15@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user15@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a8bc00_5fd01a37e1161
+
+
+--mimepart_4b1d410a8bc00_5fd01a37e1161
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/1d4da4d1001b7448dba3c76494e42b11ec9ab=
+031">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a8bc00_5fd01a37e1161--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com' AND `user_invites`.id <> 179) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 179[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user16@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user16@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user16@example.com' AND `user_invites`.id <> 180) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '186db694c7f4fe8662bbc1a563caaf27e2fda319', `email` = 'user16@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 180[0m
+Sent mail to user16@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user16@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a902a3_5fd01a37e12b0
+
+
+--mimepart_4b1d410a902a3_5fd01a37e12b0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/186db694c7f4fe8662bbc1a563caaf27e2fda=
+319">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a902a3_5fd01a37e12b0--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user17@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user17@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user17@example.com' AND `user_invites`.id <> 181) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '6520542f575fed5d74219f64787d99410cb5f1a1', `email` = 'user17@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 181[0m
+Sent mail to user17@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user17@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a9397a_5fd01a37e1363
+
+
+--mimepart_4b1d410a9397a_5fd01a37e1363
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/6520542f575fed5d74219f64787d99410cb5f=
+1a1">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a9397a_5fd01a37e1363--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user18@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.1ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user18@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user18@example.com' AND `user_invites`.id <> 182) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = 'fb8d05ec7973782e3d66ff087eb4fdcef7cf9309', `email` = 'user18@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 182[0m
+Sent mail to user18@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user18@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a96fde_5fd01a37e1421
+
+
+--mimepart_4b1d410a96fde_5fd01a37e1421
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/fb8d05ec7973782e3d66ff087eb4fdcef7cf9=
+309">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a96fde_5fd01a37e1421--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user20@example.com', '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com' AND `user_invites`.id <> 183) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '41fe2f02acbb6c97801c4e2d35f8f207bdac846e', `email` = 'user20@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 183[0m
+Sent mail to user20@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user20@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410a9b982_5fd01a37e15f2
+
+
+--mimepart_4b1d410a9b982_5fd01a37e15f2
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/41fe2f02acbb6c97801c4e2d35f8f207bdac8=
+46e">Start using Hot Ink</a>=
+
+--mimepart_4b1d410a9b982_5fd01a37e15f2--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41fe2f02acbb6c97801c4e2d35f8f207bdac846e' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 12:53:14) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"41fe2f02acbb6c97801c4e2d35f8f207bdac846e", "password"=>"[FILTERED]", "email"=>"user19@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"41fe2f02acbb6c97801c4e2d35f8f207bdac846e"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user19@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41fe2f02acbb6c97801c4e2d35f8f207bdac846e' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('dcabd9516f9b6590fb21a4b838af4a8efacb875a', '2a794388af1fc645554d507599277d9f85c2cfa1', '2009-12-07 17:53:14', NULL, '619055abd943903808de4a4cef6dd275d5419cfb', 'user19@example.com', 0, '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41fe2f02acbb6c97801c4e2d35f8f207bdac846e' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com' AND `user_invites`.id <> 183) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 183[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 11ms (DB: 43) | 302 Found [http://test.host/users?invite_code=41fe2f02acbb6c97801c4e2d35f8f207bdac846e&user%5Bemail%5D=user19%40example.com&user%5Binvite_code%5D=41fe2f02acbb6c97801c4e2d35f8f207bdac846e&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (3.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user22@example.com', '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com' AND `user_invites`.id <> 184) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '15e1e4a22a2299b168d79a3a0759e6d76e9f7764', `email` = 'user22@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 184[0m
+Sent mail to user22@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user22@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410aa3e47_5fd01a37e16b3
+
+
+--mimepart_4b1d410aa3e47_5fd01a37e16b3
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/15e1e4a22a2299b168d79a3a0759e6d76e9f7=
+764">Start using Hot Ink</a>=
+
+--mimepart_4b1d410aa3e47_5fd01a37e16b3--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '15e1e4a22a2299b168d79a3a0759e6d76e9f7764' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 12:53:14) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"15e1e4a22a2299b168d79a3a0759e6d76e9f7764", "password"=>"[FILTERED]", "email"=>"user21@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"15e1e4a22a2299b168d79a3a0759e6d76e9f7764"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user21@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '15e1e4a22a2299b168d79a3a0759e6d76e9f7764' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('dcabd9516f9b6590fb21a4b838af4a8efacb875a', '2a794388af1fc645554d507599277d9f85c2cfa1', '2009-12-07 17:53:14', NULL, '619055abd943903808de4a4cef6dd275d5419cfb', 'user21@example.com', 0, '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '15e1e4a22a2299b168d79a3a0759e6d76e9f7764' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com' AND `user_invites`.id <> 184) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 184[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 9ms (DB: 6) | 302 Found [http://test.host/users?invite_code=15e1e4a22a2299b168d79a3a0759e6d76e9f7764&user%5Bemail%5D=user21%40example.com&user%5Binvite_code%5D=15e1e4a22a2299b168d79a3a0759e6d76e9f7764&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.1ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user24@example.com', '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com' AND `user_invites`.id <> 185) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '048c15745d74e642aad1a4edf32a629f28fa14d9', `email` = 'user24@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 185[0m
+Sent mail to user24@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user24@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410aaaa55_5fd01a37e1747
+
+
+--mimepart_4b1d410aaaa55_5fd01a37e1747
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/048c15745d74e642aad1a4edf32a629f28fa1=
+4d9">Start using Hot Ink</a>=
+
+--mimepart_4b1d410aaaa55_5fd01a37e1747--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '048c15745d74e642aad1a4edf32a629f28fa14d9' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 12:53:14) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"048c15745d74e642aad1a4edf32a629f28fa14d9", "password"=>"[FILTERED]", "email"=>"user23@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"048c15745d74e642aad1a4edf32a629f28fa14d9"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user23@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '048c15745d74e642aad1a4edf32a629f28fa14d9' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('dcabd9516f9b6590fb21a4b838af4a8efacb875a', '2a794388af1fc645554d507599277d9f85c2cfa1', '2009-12-07 17:53:14', NULL, '619055abd943903808de4a4cef6dd275d5419cfb', 'user23@example.com', 0, '2009-12-07 17:53:14')[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '048c15745d74e642aad1a4edf32a629f28fa14d9' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com' AND `user_invites`.id <> 185) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 185[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 9ms (DB: 3) | 302 Found [http://test.host/users?invite_code=048c15745d74e642aad1a4edf32a629f28fa14d9&user%5Bemail%5D=user23%40example.com&user%5Binvite_code%5D=048c15745d74e642aad1a4edf32a629f28fa14d9&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'user23@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user26@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com' AND `user_invites`.id <> 186) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '41b285cf27f41a0e78b479c874e3a4c7b60eb1c8', `email` = 'user26@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 186[0m
+Sent mail to user26@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user26@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410ab1abc_5fd01a37e18d5
+
+
+--mimepart_4b1d410ab1abc_5fd01a37e18d5
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/41b285cf27f41a0e78b479c874e3a4c7b60eb=
+1c8">Start using Hot Ink</a>=
+
+--mimepart_4b1d410ab1abc_5fd01a37e18d5--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41b285cf27f41a0e78b479c874e3a4c7b60eb1c8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 12:53:14) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"41b285cf27f41a0e78b479c874e3a4c7b60eb1c8", "password"=>"[FILTERED]", "email"=>"user25@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"41b285cf27f41a0e78b479c874e3a4c7b60eb1c8"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user25@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41b285cf27f41a0e78b479c874e3a4c7b60eb1c8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('dcabd9516f9b6590fb21a4b838af4a8efacb875a', '2a794388af1fc645554d507599277d9f85c2cfa1', '2009-12-07 17:53:14', NULL, '619055abd943903808de4a4cef6dd275d5419cfb', 'user25@example.com', 0, '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41b285cf27f41a0e78b479c874e3a4c7b60eb1c8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com' AND `user_invites`.id <> 186) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 17:53:14', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 186[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 9ms (DB: 4) | 302 Found [http://test.host/users?invite_code=41b285cf27f41a0e78b479c874e3a4c7b60eb1c8&user%5Bemail%5D=user25%40example.com&user%5Binvite_code%5D=41b285cf27f41a0e78b479c874e3a4c7b60eb1c8&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '41b285cf27f41a0e78b479c874e3a4c7b60eb1c8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user28@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 17:53:14', NULL, NULL, NULL, 'user28@example.com', '2009-12-07 17:53:14')[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user28@example.com' AND `user_invites`.id <> 187) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 17:53:14', `invite_code` = '9eced352025301f5508ecaa02af998777da283b1', `email` = 'user28@example.com', `updated_at` = '2009-12-07 17:53:14' WHERE `id` = 187[0m
+Sent mail to user28@example.com
+
+Date: Mon, 7 Dec 2009 12:53:14 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user28@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d410ad36d4_5fd01a37e1966
+
+
+--mimepart_4b1d410ad36d4_5fd01a37e1966
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/9eced352025301f5508ecaa02af998777da28=
+3b1">Start using Hot Ink</a>=
+
+--mimepart_4b1d410ad36d4_5fd01a37e1966--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 12:53:14) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"9eced352025301f5508ecaa02af998777da283b1", "password"=>"[FILTERED]", "email"=>"user27@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"madeupinvitecode"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user27@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'madeupinvitecode' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 4ms (View: 0, DB: 2) | 200 OK [http://test.host/users?invite_code=madeupinvitecode&user%5Bemail%5D=user27%40example.com&user%5Binvite_code%5D=9eced352025301f5508ecaa02af998777da283b1&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-12-07 12:53:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-12-07 12:53:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UserInvitesController#new (for 0.0.0.0 at 2009-12-07 12:53:14) [GET]
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 3ms (View: 0, DB: 0) | 200 OK [http://test.host/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UserInvitesController#new (for 0.0.0.0 at 2009-12-07 12:53:14) [GET]
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUserInvite Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.6ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user2@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user2@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user2@example.com' AND `user_invites`.id <> 188) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '2bfd2423893abf2e97ce0f0d6257ba4ca25ae73d', `email` = 'user2@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 188[0m
+Sent mail to user2@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user2@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313737d5_60741a37e111
+
+
+--mimepart_4b1d4313737d5_60741a37e111
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/2bfd2423893abf2e97ce0f0d6257ba4ca25ae=
+73d">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313737d5_60741a37e111--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user1@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` IS NULL AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user4@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user4@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user4@example.com' AND `user_invites`.id <> 189) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '8e674f209dd0dd7f8ea3bb0d697bf525c5084881', `email` = 'user4@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 189[0m
+Sent mail to user4@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user4@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d43139ca41_60741a37e229
+
+
+--mimepart_4b1d43139ca41_60741a37e229
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/8e674f209dd0dd7f8ea3bb0d697bf525c5084=
+881">Start using Hot Ink</a>=
+
+--mimepart_4b1d43139ca41_60741a37e229--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user5@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com' AND `user_invites`.id <> 190) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'dd41fd35a888f7aa1a9ad841e25e896cfedce408', `email` = 'user5@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 190[0m
+Sent mail to user5@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user5@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d43139f920_60741a37e3a
+
+
+--mimepart_4b1d43139f920_60741a37e3a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/dd41fd35a888f7aa1a9ad841e25e896cfedce=
+408">Start using Hot Ink</a>=
+
+--mimepart_4b1d43139f920_60741a37e3a--
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user3@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'dd41fd35a888f7aa1a9ad841e25e896cfedce408' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('cdaea55cea7d6a92cbf9ff4aa4474585f43b48ff', '70d0e330589fee2d67222cb43e6e8d953ae4c215', '2009-12-07 18:01:55', NULL, 'e454b75ac1f86183592793f250240b684dc1af8f', 'user3@example.com', 0, '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'dd41fd35a888f7aa1a9ad841e25e896cfedce408' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user5@example.com' AND `user_invites`.id <> 190) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.7ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:55', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 190[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.5ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.4ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user6@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com' AND `user_invites`.id <> 191) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '138c854c25c4862c4383c1367b0c320394075576', `email` = 'user6@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 191[0m
+Sent mail to user6@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user6@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313ad992_60741a37e42a
+
+
+--mimepart_4b1d4313ad992_60741a37e42a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/138c854c25c4862c4383c1367b0c320394075=
+576">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313ad992_60741a37e42a--
+  [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user7@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '138c854c25c4862c4383c1367b0c320394075576' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('cdaea55cea7d6a92cbf9ff4aa4474585f43b48ff', '70d0e330589fee2d67222cb43e6e8d953ae4c215', '2009-12-07 18:01:55', NULL, 'e454b75ac1f86183592793f250240b684dc1af8f', 'user7@example.com', 0, '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '138c854c25c4862c4383c1367b0c320394075576' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user6@example.com' AND `user_invites`.id <> 191) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.4ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:55', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 191[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`id` = 191) [0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user8@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user8@example.com', '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user8@example.com' AND `user_invites`.id <> 192) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '0e891178fd4e072f423dc3ade76c57987d0e5347', `email` = 'user8@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 192[0m
+Sent mail to user8@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user8@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313b61ec_60741a37e5c0
+
+
+--mimepart_4b1d4313b61ec_60741a37e5c0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/0e891178fd4e072f423dc3ade76c57987d0e5=
+347">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313b61ec_60741a37e5c0--
+  [4;35;1mSQL (1.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` IS NULL AND `user_invites`.id <> 192) LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user9@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com' AND `user_invites`.id <> 193) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '891b9c5ddafbbdd207a727b590a69d029c634c05', `email` = 'user9@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 193[0m
+Sent mail to user9@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user9@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313bb02f_60741a37e633
+
+
+--mimepart_4b1d4313bb02f_60741a37e633
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/891b9c5ddafbbdd207a727b590a69d029c634=
+c05">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313bb02f_60741a37e633--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user9@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user10@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user10@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user10@example.com' AND `user_invites`.id <> 194) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '38773cc4af3fc203ba6d6cc56e8a2d2bb8f7d90b', `email` = 'user10@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 194[0m
+Sent mail to user10@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user10@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313bf32c_60741a37e74e
+
+
+--mimepart_4b1d4313bf32c_60741a37e74e
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/38773cc4af3fc203ba6d6cc56e8a2d2bb8f7d=
+90b">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313bf32c_60741a37e74e--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme' AND `user_invites`.id <> 194) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme@ca' AND `user_invites`.id <> 194) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user11@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.3ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user11@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user11@example.com' AND `user_invites`.id <> 195) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'dbbc7115282a6228593ca95f6e945eead2b947ab', `email` = 'user11@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 195[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user12@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user12@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user12@example.com' AND `user_invites`.id <> 196) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '9e8f1a54a2528f231457f1ba4903be8cd3cd996c', `email` = 'user12@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 196[0m
+Sent mail to user12@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user12@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313c5bb7_60741a37e8eb
+
+
+--mimepart_4b1d4313c5bb7_60741a37e8eb
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/9e8f1a54a2528f231457f1ba4903be8cd3cd9=
+96c">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313c5bb7_60741a37e8eb--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user13@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user13@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user13@example.com' AND `user_invites`.id <> 197) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '6f4875b17060157283e8e8de074d664214e6366e', `email` = 'user13@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 197[0m
+Sent mail to user13@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user13@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313c9453_60741a37e99d
+
+
+--mimepart_4b1d4313c9453_60741a37e99d
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/6f4875b17060157283e8e8de074d664214e63=
+66e">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313c9453_60741a37e99d--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '6f4875b17060157283e8e8de074d664214e6366e' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user14@example.com', '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.5ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com' AND `user_invites`.id <> 198) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'fecd51e80607494be2a754401e461a7e5b795659', `email` = 'user14@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 198[0m
+Sent mail to user14@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user14@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313cd45f_60741a37e10dd
+
+
+--mimepart_4b1d4313cd45f_60741a37e10dd
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/fecd51e80607494be2a754401e461a7e5b795=
+659">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313cd45f_60741a37e10dd--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user14@example.com' AND `user_invites`.id <> 198) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:55', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 198[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'fecd51e80607494be2a754401e461a7e5b795659' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user15@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com' AND `user_invites`.id <> 199) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '60608f9e602caa4e1b1b759084b0dbae02407149', `email` = 'user15@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 199[0m
+Sent mail to user15@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user15@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313d2161_60741a37e11c0
+
+
+--mimepart_4b1d4313d2161_60741a37e11c0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/60608f9e602caa4e1b1b759084b0dbae02407=
+149">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313d2161_60741a37e11c0--
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user15@example.com' AND `user_invites`.id <> 199) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:55', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 199[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user16@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user16@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user16@example.com' AND `user_invites`.id <> 200) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'f2ba2c9406463d2f48cb0f53d1fe8d141c272d23', `email` = 'user16@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 200[0m
+Sent mail to user16@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user16@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313d73c3_60741a37e126a
+
+
+--mimepart_4b1d4313d73c3_60741a37e126a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/f2ba2c9406463d2f48cb0f53d1fe8d141c272=
+d23">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313d73c3_60741a37e126a--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user17@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.3ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user17@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user17@example.com' AND `user_invites`.id <> 201) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'bcc06d5a19556dff36ff743c71cf4047aecd921f', `email` = 'user17@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 201[0m
+Sent mail to user17@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user17@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313db043_60741a37e13c6
+
+
+--mimepart_4b1d4313db043_60741a37e13c6
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/bcc06d5a19556dff36ff743c71cf4047aecd9=
+21f">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313db043_60741a37e13c6--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user18@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.6ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user18@example.com', '2009-12-07 18:01:55')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user18@example.com' AND `user_invites`.id <> 202) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '682cd0a6ff42f80d06e93885d93d30bb91ced94b', `email` = 'user18@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 202[0m
+Sent mail to user18@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user18@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313df3b1_60741a37e1488
+
+
+--mimepart_4b1d4313df3b1_60741a37e1488
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/682cd0a6ff42f80d06e93885d93d30bb91ced=
+94b">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313df3b1_60741a37e1488--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user20@example.com', '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com' AND `user_invites`.id <> 203) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = '8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc', `email` = 'user20@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 203[0m
+Sent mail to user20@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user20@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313e3ce5_60741a37e1539
+
+
+--mimepart_4b1d4313e3ce5_60741a37e1539
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/8c408b33a3b4cc2436dfaec1d3f28d0178e8b=
+cdc">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313e3ce5_60741a37e1539--
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 13:01:55) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc", "password"=>"[FILTERED]", "email"=>"user19@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user19@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('cdaea55cea7d6a92cbf9ff4aa4474585f43b48ff', '70d0e330589fee2d67222cb43e6e8d953ae4c215', '2009-12-07 18:01:55', NULL, 'e454b75ac1f86183592793f250240b684dc1af8f', 'user19@example.com', 0, '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = '8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user20@example.com' AND `user_invites`.id <> 203) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:55', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 203[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 12ms (DB: 51) | 302 Found [http://test.host/users?invite_code=8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc&user%5Bemail%5D=user19%40example.com&user%5Binvite_code%5D=8c408b33a3b4cc2436dfaec1d3f28d0178e8bcdc&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user22@example.com', '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com' AND `user_invites`.id <> 204) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'da28a816230ee17669376192513a6bab94e46cae', `email` = 'user22@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 204[0m
+Sent mail to user22@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user22@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313ebf73_60741a37e16b0
+
+
+--mimepart_4b1d4313ebf73_60741a37e16b0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/da28a816230ee17669376192513a6bab94e46=
+cae">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313ebf73_60741a37e16b0--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'da28a816230ee17669376192513a6bab94e46cae' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 13:01:55) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"da28a816230ee17669376192513a6bab94e46cae", "password"=>"[FILTERED]", "email"=>"user21@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"da28a816230ee17669376192513a6bab94e46cae"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user21@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'da28a816230ee17669376192513a6bab94e46cae' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('cdaea55cea7d6a92cbf9ff4aa4474585f43b48ff', '70d0e330589fee2d67222cb43e6e8d953ae4c215', '2009-12-07 18:01:55', NULL, 'e454b75ac1f86183592793f250240b684dc1af8f', 'user21@example.com', 0, '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'da28a816230ee17669376192513a6bab94e46cae' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user22@example.com' AND `user_invites`.id <> 204) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:55', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 204[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 10ms (DB: 4) | 302 Found [http://test.host/users?invite_code=da28a816230ee17669376192513a6bab94e46cae&user%5Bemail%5D=user21%40example.com&user%5Binvite_code%5D=da28a816230ee17669376192513a6bab94e46cae&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:55', NULL, NULL, NULL, 'user24@example.com', '2009-12-07 18:01:55')[0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com' AND `user_invites`.id <> 205) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:55', `invite_code` = 'f48edfab24f13e9af6f7400fbcbd995aa00a0951', `email` = 'user24@example.com', `updated_at` = '2009-12-07 18:01:55' WHERE `id` = 205[0m
+Sent mail to user24@example.com
+
+Date: Mon, 7 Dec 2009 13:01:55 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user24@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d4313f363a_60741a37e1733
+
+
+--mimepart_4b1d4313f363a_60741a37e1733
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/f48edfab24f13e9af6f7400fbcbd995aa00a0=
+951">Start using Hot Ink</a>=
+
+--mimepart_4b1d4313f363a_60741a37e1733--
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'f48edfab24f13e9af6f7400fbcbd995aa00a0951' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 13:01:56) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"f48edfab24f13e9af6f7400fbcbd995aa00a0951", "password"=>"[FILTERED]", "email"=>"user23@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"f48edfab24f13e9af6f7400fbcbd995aa00a0951"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user23@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (1.1ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'f48edfab24f13e9af6f7400fbcbd995aa00a0951' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('30a230d9ca3b92abd58d102ebcde5f4b4444e887', '7e707eadeccc8e17498b3494d216b05dcd19b9df', '2009-12-07 18:01:56', NULL, 'edc87b621652dccf8f22c005536a99e5185b945a', 'user23@example.com', 0, '2009-12-07 18:01:56')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'f48edfab24f13e9af6f7400fbcbd995aa00a0951' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user24@example.com' AND `user_invites`.id <> 205) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:56', `updated_at` = '2009-12-07 18:01:56' WHERE `id` = 205[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 10ms (DB: 5) | 302 Found [http://test.host/users?invite_code=f48edfab24f13e9af6f7400fbcbd995aa00a0951&user%5Bemail%5D=user23%40example.com&user%5Binvite_code%5D=f48edfab24f13e9af6f7400fbcbd995aa00a0951&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'user23@example.com') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:56', NULL, NULL, NULL, 'user26@example.com', '2009-12-07 18:01:56')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com' AND `user_invites`.id <> 206) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.5ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:56', `invite_code` = 'fde4b84613235777cd16aa8adc1ac3cc440d7bb8', `email` = 'user26@example.com', `updated_at` = '2009-12-07 18:01:56' WHERE `id` = 206[0m
+Sent mail to user26@example.com
+
+Date: Mon, 7 Dec 2009 13:01:56 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user26@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d43146c2e_60741a37e182f
+
+
+--mimepart_4b1d43146c2e_60741a37e182f
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/fde4b84613235777cd16aa8adc1ac3cc440d7=
+bb8">Start using Hot Ink</a>=
+
+--mimepart_4b1d43146c2e_60741a37e182f--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'fde4b84613235777cd16aa8adc1ac3cc440d7bb8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 13:01:56) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"fde4b84613235777cd16aa8adc1ac3cc440d7bb8", "password"=>"[FILTERED]", "email"=>"user25@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"fde4b84613235777cd16aa8adc1ac3cc440d7bb8"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user25@example.com') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'fde4b84613235777cd16aa8adc1ac3cc440d7bb8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`encrypted_password`, `salt`, `updated_at`, `remember_token`, `confirmation_token`, `email`, `email_confirmed`, `created_at`) VALUES('30a230d9ca3b92abd58d102ebcde5f4b4444e887', '7e707eadeccc8e17498b3494d216b05dcd19b9df', '2009-12-07 18:01:56', NULL, 'edc87b621652dccf8f22c005536a99e5185b945a', 'user25@example.com', 0, '2009-12-07 18:01:56')[0m
+  [4;36;1mUserInvite Load (0.5ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'fde4b84613235777cd16aa8adc1ac3cc440d7bb8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user26@example.com' AND `user_invites`.id <> 206) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `redeemed_at` = '2009-12-07 18:01:56', `updated_at` = '2009-12-07 18:01:56' WHERE `id` = 206[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/session/new
+Completed in 11ms (DB: 5) | 302 Found [http://test.host/users?invite_code=fde4b84613235777cd16aa8adc1ac3cc440d7bb8&user%5Bemail%5D=user25%40example.com&user%5Binvite_code%5D=fde4b84613235777cd16aa8adc1ac3cc440d7bb8&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'fde4b84613235777cd16aa8adc1ac3cc440d7bb8' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user28@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`updated_at`, `invited_at`, `redeemed_at`, `invite_code`, `email`, `created_at`) VALUES('2009-12-07 18:01:56', NULL, NULL, NULL, 'user28@example.com', '2009-12-07 18:01:56')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'user28@example.com' AND `user_invites`.id <> 207) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `created_at` = '2009-12-07 18:01:56', `invite_code` = 'ed1f1846b3bccee110f0711416e5fb18bb1fd01c', `email` = 'user28@example.com', `updated_at` = '2009-12-07 18:01:56' WHERE `id` = 207[0m
+Sent mail to user28@example.com
+
+Date: Mon, 7 Dec 2009 13:01:56 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: user28@example.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1d43142a6d0_60741a37e192a
+
+
+--mimepart_4b1d43142a6d0_60741a37e192a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/ed1f1846b3bccee110f0711416e5fb18bb1fd=
+01c">Start using Hot Ink</a>=
+
+--mimepart_4b1d43142a6d0_60741a37e192a--
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-12-07 13:01:56) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"ed1f1846b3bccee110f0711416e5fb18bb1fd01c", "password"=>"[FILTERED]", "email"=>"user27@example.com"}, "action"=>"create", "controller"=>"users", "invite_code"=>"madeupinvitecode"}
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'user27@example.com') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'madeupinvitecode' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 4ms (View: 0, DB: 3) | 200 OK [http://test.host/users?invite_code=madeupinvitecode&user%5Bemail%5D=user27%40example.com&user%5Binvite_code%5D=ed1f1846b3bccee110f0711416e5fb18bb1fd01c&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-12-07 13:01:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-12-07 13:01:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.1ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UserInvitesController#new (for 0.0.0.0 at 2009-12-07 13:01:56) [GET]
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 4ms (View: 0, DB: 0) | 200 OK [http://test.host/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UserInvitesController#new (for 0.0.0.0 at 2009-12-07 13:01:56) [GET]
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
