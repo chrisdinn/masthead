@@ -3,4 +3,5 @@
   <%= form.input :password %>
   <%= form.input :password_confirmation, :label => "Confirm password" %>
 <% end %>
+<%= hidden_field_tag :invite_code, params[:invite_code] %>
 

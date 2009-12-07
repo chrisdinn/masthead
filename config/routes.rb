@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :user_invites
+  map.root :controller => 'users', :action => 'index'
+  
+  map.redeem_user_invite '/sign_up/:invite_code', :controller => 'users', :action => 'new'
 
-  
-  map.root :controller => 'clearance/users', :action => 'index'
-  
+  map.resources :users
+  map.resources :user_invites
 end

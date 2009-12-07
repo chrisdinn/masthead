@@ -1037,3 +1037,619 @@ Migrating to CreateUserInvites (20091205195959)
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
   [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091205195959')[0m
   [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091205164002')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-06 00:11:21) [GET]
+  [4;36;1mUserInvite Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-06 00:11:30) [POST]
+  Parameters: {"user_invite"=>{"email"=>"email@bong.com"}, "commit"=>"Send invitation", "authenticity_token"=>"4KTgnbD2ioR3rlCUDVmh25p1xiDG7BPRFGDkWvI5QbY="}
+  [4;35;1mUserInvite Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'email@bong.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-06 05:11:30', NULL, NULL, '2009-12-06 05:11:30', NULL, 'email@bong.com')[0m
+Sent mail to email@bong.com
+
+Date: Sun, 6 Dec 2009 00:11:30 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: email@bong.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1b3d0242cc8_5be581909be8231
+
+
+--mimepart_4b1b3d0242cc8_5be581909be8231
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+
+--mimepart_4b1b3d0242cc8_5be581909be8231--
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 223ms (DB: 3) | 302 Found [http://0.0.0.0/user_invites]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-12-06 00:11:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (0.8ms)
+Completed in 34ms (View: 16, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-06 00:13:30) [GET]
+  [4;36;1mUserInvite Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/user_invites/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUserInvite Columns (42.5ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mUserInvite Load (22.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.7ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme') LIMIT 1[0m
+  [4;35;1mUserInvite Load (3.7ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'itsme$#%#') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-12-06 15:20:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (1.7ms)
+Completed in 60ms (View: 38, DB: 4) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-06 15:20:42) [GET]
+  [4;36;1mUserInvite Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 132ms (View: 116, DB: 1) | 200 OK [http://0.0.0.0/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-06 15:20:52) [POST]
+  Parameters: {"user_invite"=>{"email"=>"chrisgdinn@gmail.com"}, "commit"=>"Send invitation", "authenticity_token"=>"4KTgnbD2ioR3rlCUDVmh25p1xiDG7BPRFGDkWvI5QbY="}
+  [4;35;1mUserInvite Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chrisgdinn@gmail.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.5ms)[0m   [0;1mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-06 20:20:52', NULL, NULL, '2009-12-06 20:20:52', NULL, 'chrisgdinn@gmail.com')[0m
+Sent mail to chrisgdinn@gmail.com
+
+Date: Sun, 6 Dec 2009 15:20:52 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: chrisgdinn@gmail.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1c122463237_85b381afae0c136
+
+
+--mimepart_4b1c122463237_85b381afae0c136
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/">Start using Hot Ink</a>=
+
+--mimepart_4b1c122463237_85b381afae0c136--
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chrisgdinn@gmail.com' AND `user_invites`.id <> 2) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `updated_at` = '2009-12-06 20:20:52', `created_at` = '2009-12-06 20:20:52', `email` = 'chrisgdinn@gmail.com', `invite_code` = '9646e56838d554f1e4274d94a80e57aa5e46254e' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 186ms (DB: 5) | 302 Found [http://0.0.0.0/user_invites]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-12-06 15:20:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.4ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (0.8ms)
+Completed in 34ms (View: 9, DB: 4) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-06 15:22:32) [GET]
+  [4;36;1mUserInvite Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 97ms (View: 8, DB: 2) | 200 OK [http://0.0.0.0/user_invites/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-06 15:22:36) [POST]
+  Parameters: {"user_invite"=>{"email"=>"chrisgdinn@gmail.com"}, "commit"=>"Send invitation", "authenticity_token"=>"4KTgnbD2ioR3rlCUDVmh25p1xiDG7BPRFGDkWvI5QbY="}
+  [4;35;1mUserInvite Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chrisgdinn@gmail.com') LIMIT 1[0m
+  [4;36;1mUserInvite Create (0.2ms)[0m   [0;1mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-06 20:22:36', NULL, NULL, '2009-12-06 20:22:36', NULL, 'chrisgdinn@gmail.com')[0m
+Sent mail to chrisgdinn@gmail.com
+
+Date: Sun, 6 Dec 2009 15:22:36 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: chrisgdinn@gmail.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1c128cba2e_85b381b447f03fe
+
+
+--mimepart_4b1c128cba2e_85b381b447f03fe
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+#&lt;UserInvite id: 3, email: &quot;chrisgdinn@gmail.com&quot;, invite_co=
+de: nil, invited_at: nil, redeemed_at: nil, created_at: &quot;2009-12-06 =
+20:22:36&quot;, updated_at: &quot;2009-12-06 20:22:36&quot;&gt;
+<a href=3D"http://localhost/sign_up/">Start using Hot Ink</a>=
+
+--mimepart_4b1c128cba2e_85b381b447f03fe--
+  [4;35;1mUserInvite Load (0.5ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chrisgdinn@gmail.com' AND `user_invites`.id <> 3) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.3ms)[0m   [0;1mUPDATE `user_invites` SET `updated_at` = '2009-12-06 20:22:36', `created_at` = '2009-12-06 20:22:36', `email` = 'chrisgdinn@gmail.com', `invite_code` = 'daff912e80be06cc5d815cf7bf322e7c221e4f16' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 54ms (DB: 3) | 302 Found [http://0.0.0.0/user_invites]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-12-06 15:22:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (0.8ms)
+Completed in 34ms (View: 10, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-12-06 15:25:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (10.7ms)
+Completed in 40ms (View: 19, DB: 3) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-06 16:08:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (1.3ms)
+Completed in 35ms (View: 10, DB: 4) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-06 16:08:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered layouts/_flashes (0.8ms)
+Completed in 26ms (View: 6, DB: 2) | 200 OK [http://0.0.0.0/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-06 16:09:01) [GET]
+  [4;35;1mUserInvite Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 25ms (View: 8, DB: 3) | 200 OK [http://0.0.0.0/user_invites/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-06 16:09:08) [POST]
+  Parameters: {"user_invite"=>{"email"=>"chrisgdinn@gmail.com"}, "commit"=>"Send invitation", "authenticity_token"=>"4KTgnbD2ioR3rlCUDVmh25p1xiDG7BPRFGDkWvI5QbY="}
+  [4;36;1mUserInvite Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chrisgdinn@gmail.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-06 21:09:08', NULL, NULL, '2009-12-06 21:09:08', NULL, 'chrisgdinn@gmail.com')[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chrisgdinn@gmail.com' AND `user_invites`.id <> 4) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `updated_at` = '2009-12-06 21:09:08', `created_at` = '2009-12-06 21:09:08', `email` = 'chrisgdinn@gmail.com', `invite_code` = '945d734d9046db294b313cdca00c9d5569985579' WHERE `id` = 4[0m
+Sent mail to chrisgdinn@gmail.com
+
+Date: Sun, 6 Dec 2009 16:09:08 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: chrisgdinn@gmail.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1c1d746d2e4_85b381a4c71c56a
+
+
+--mimepart_4b1c1d746d2e4_85b381a4c71c56a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/945d734d9046db294b313cdca00c9d5569985=
+579">Start using Hot Ink</a>=
+
+--mimepart_4b1c1d746d2e4_85b381a4c71c56a--
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 55ms (DB: 3) | 302 Found [http://0.0.0.0/user_invites]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-06 16:09:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUserInvite Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (0.8ms)
+Completed in 104ms (View: 9, DB: 3) | 200 OK [http://0.0.0.0/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 16:09:51) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"945d734d9046db294b313cdca00c9d5569985", "controller"=>"users"}
+  [4;35;1mUser Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '3c64b99516569be440424e09574840d91e8c01af') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (10.7ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 58ms (View: 31, DB: 4) | 200 OK [http://localhost/sign_up/945d734d9046db294b313cdca00c9d5569985]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (45.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUserInvites (20091205195959)
+  [4;36;1mSQL (84.3ms)[0m   [0;1mDROP TABLE `user_invites`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20091205195959'[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;36;1mSQL (34.8ms)[0m   [0;1mDROP TABLE `users`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20091205164002'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;36;1mSQL (182.3ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `remember_token` varchar(128), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Key column 'confirmation_token' doesn't exist in table: CREATE INDEX `index_users_on_id_and_confirmation_token` ON `users` (`id`, `confirmation_token`)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `remember_token` varchar(128), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (18.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `remember_token` varchar(128), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `remember_token` varchar(128), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (49.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (192.5ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;35;1mSQL (81.6ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `remember_token` varchar(128), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (76.5ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (75.5ms)[0m   [0mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091205164002')[0m
+Migrating to CreateUserInvites (20091205195959)
+  [4;35;1mSQL (65.1ms)[0m   [0mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (77.2ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;35;1mSQL (83.3ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091205195959')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mdescribe `user_invites`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `user_invites`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `masthead_test`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE DATABASE `masthead_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.3ms)[0m   [0mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (117.3ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;35;1mSQL (75.5ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (70.5ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `remember_token` varchar(128), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (86.3ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (97.7ms)[0m   [0mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (78.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091205195959')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091205164002')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (70.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (125.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+  [4;35;1mSQL (53.7ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `confirmation_token` varchar(128), `remember_token` varchar(128), `email_confirmed` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (86.1ms)[0m   [0;1mCREATE INDEX `index_users_on_id_and_confirmation_token` ON `users` (`id`, `confirmation_token`)[0m
+  [4;35;1mSQL (83.7ms)[0m   [0mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;36;1mSQL (82.6ms)[0m   [0;1mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091205164002')[0m
+Migrating to CreateUserInvites (20091205195959)
+  [4;36;1mSQL (66.3ms)[0m   [0;1mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (85.8ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;36;1mSQL (93.7ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091205195959')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `user_invites`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `user_invites`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mDROP DATABASE IF EXISTS `masthead_test`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE DATABASE `masthead_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (54.3ms)[0m   [0mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (101.9ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;35;1mSQL (75.0ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (57.1ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `confirmation_token` varchar(128), `remember_token` varchar(128), `email_confirmed` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (78.3ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (84.7ms)[0m   [0mCREATE INDEX `index_users_on_id_and_confirmation_token` ON `users` (`id`, `confirmation_token`)[0m
+  [4;36;1mSQL (91.5ms)[0m   [0;1mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (87.9ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (85.4ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091205195959')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091205164002')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP DATABASE IF EXISTS `masthead_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `masthead_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (43.5ms)[0m   [0mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (176.5ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;35;1mSQL (149.4ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (118.6ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `confirmation_token` varchar(128), `remember_token` varchar(128), `email_confirmed` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (123.0ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (120.0ms)[0m   [0mCREATE INDEX `index_users_on_id_and_confirmation_token` ON `users` (`id`, `confirmation_token`)[0m
+  [4;36;1mSQL (108.7ms)[0m   [0;1mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (104.7ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (85.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091205195959')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091205164002')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-06 18:31:01) [GET]
+  [4;35;1mUserInvite Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/user_invites/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-06 18:31:05) [POST]
+  Parameters: {"user_invite"=>{"email"=>"chris@chris.com"}, "commit"=>"Send invitation", "authenticity_token"=>"NnELkE49+90gk0obN1IFfZEfcwDgaPF1TMPPnSU0bkY="}
+  [4;36;1mUserInvite Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chris@chris.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-06 23:31:05', NULL, NULL, '2009-12-06 23:31:05', NULL, 'chris@chris.com')[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chris@chris.com' AND `user_invites`.id <> 1) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.4ms)[0m   [0mUPDATE `user_invites` SET `updated_at` = '2009-12-06 23:31:05', `created_at` = '2009-12-06 23:31:05', `email` = 'chris@chris.com', `invite_code` = 'd141fafddffe369a4bfff011f2f8497bdc02fc03' WHERE `id` = 1[0m
+Sent mail to chris@chris.com
+
+Date: Sun, 6 Dec 2009 18:31:05 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: chris@chris.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1c3eb9f32ae_85b381ab582074
+
+
+--mimepart_4b1c3eb9f32ae_85b381ab582074
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/d141fafddffe369a4bfff011f2f8497bdc02f=
+c03">Start using Hot Ink</a>=
+
+--mimepart_4b1c3eb9f32ae_85b381ab582074--
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 120ms (DB: 3) | 302 Found [http://localhost/user_invites]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-06 18:31:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUserInvite Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendered layouts/_flashes (0.7ms)
+Completed in 26ms (View: 5, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 18:31:22) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"d141fafddffe369a4bfff011f2f8497bdc02f", "controller"=>"users"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '3c64b99516569be440424e09574840d91e8c01af') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (10.7ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 47ms (View: 33, DB: 2) | 200 OK [http://localhost/sign_up/d141fafddffe369a4bfff011f2f8497bdc02f]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-06 18:31:44) [POST]
+  Parameters: {"commit"=>"Start using Hot Ink", "action"=>"create", "authenticity_token"=>"NnELkE49+90gk0obN1IFfZEfcwDgaPF1TMPPnSU0bkY=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"d141fafddffe369a4bfff011f2f8497bdc02f", "password"=>"[FILTERED]", "email"=>"chris@chris.com"}}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '3c64b99516569be440424e09574840d91e8c01af') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'chris@chris.com') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new (401)
+Rendered users/_inputs (12.4ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 311ms (View: 93, DB: 3) | 401 Unauthorized [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 18:37:31) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"d141fafddffe369a4bfff011f2f8497bdc02f", "controller"=>"users"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '3c64b99516569be440424e09574840d91e8c01af') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (10.1ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 34ms (View: 20, DB: 2) | 200 OK [http://localhost/sign_up/d141fafddffe369a4bfff011f2f8497bdc02f]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-06 18:37:46) [POST]
+  Parameters: {"commit"=>"Start using Hot Ink", "action"=>"create", "authenticity_token"=>"NnELkE49+90gk0obN1IFfZEfcwDgaPF1TMPPnSU0bkY=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "invite_code"=>"d141fafddffe369a4bfff011f2f8497bdc02f", "password"=>"[FILTERED]", "email"=>"chris@hotink.ca"}}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '3c64b99516569be440424e09574840d91e8c01af') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: invite_code
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'chris@hotink.ca') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`redeemed_at` IS NULL AND `user_invites`.`invite_code` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new (401)
+Rendered users/_inputs (7.5ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 52ms (View: 20, DB: 2) | 401 Unauthorized [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 18:48:17) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"d141fafddffe369a4bfff011f2f8497bdc02f", "controller"=>"users"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '3c64b99516569be440424e09574840d91e8c01af') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (10.9ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 41ms (View: 26, DB: 2) | 200 OK [http://localhost/sign_up/d141fafddffe369a4bfff011f2f8497bdc02f]

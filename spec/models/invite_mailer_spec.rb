@@ -1,15 +1,11 @@
 require 'spec_helper'
 
 describe InviteMailer do
-  
   describe "user invite email" do
-    #include ActionController::UrlWriter
-    
     before(:each) do
       @invite = Factory(:user_invite)
-      @email = InviteMailer.create_user_invite(@invite)
-    end
-    
+      @email = ActionMailer::Base.deliveries.last
+    end    
 
     it "should be set to be delivered to the email passed in" do
       @email.should deliver_to(@invite.email)

@@ -10,6 +10,7 @@ Factory.define :user do |user|
   user.email                 { Factory.next :email }
   user.password              { "password" }
   user.password_confirmation { "password" }
+  user.invite_code           { Factory(:user_invite).invite_code }
 end
 
 Factory.define :email_confirmed_user, :parent => :user do |user|

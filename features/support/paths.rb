@@ -4,8 +4,7 @@ module NavigationHelpers
     
     when /the homepage/i
       root_path
-    when /the sign up page/i
-      new_user_path
+
     when /the sign in page/i
       new_session_path
     when /the password reset request page/i
@@ -15,6 +14,8 @@ module NavigationHelpers
       
     when /the new user invite page/
       new_user_invite_path
+    when /the redeem user invite page/
+      redeem_user_invite_path(@user_invite.invite_code)
     # Add more page name => path mappings here
     
     else
