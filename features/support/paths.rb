@@ -16,6 +16,11 @@ module NavigationHelpers
       new_user_invite_path
     when /the redeem user invite page/
       redeem_user_invite_path(@user_invite.invite_code)
+      
+    when /the consumers page/
+      consumers_path
+    when /the new consumer page/
+      new_consumer_path
     # Add more page name => path mappings here
     
     else

@@ -2892,3 +2892,82 @@ Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-12-07 22:50:
 Redirected to http://localhost:3000/sso/login
 Filter chain halted as [:go_sign_in] rendered_or_redirected.
 Completed in 0ms (DB: 0) | 302 Found [http://localhost/session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (20.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceCreateUsers (20091205164002)
+Migrating to CreateUserInvites (20091205195959)
+Migrating to CreateConsumers (20091208161428)
+  [4;36;1mSQL (148.9ms)[0m   [0;1mCREATE TABLE `consumers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `label` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091208161428')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (79.8ms)[0m   [0mSHOW FIELDS FROM `consumers`[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mdescribe `consumers`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `consumers`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `user_invites`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `user_invites`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (237.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `masthead_test`[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mCREATE DATABASE `masthead_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (13.5ms)[0m   [0mCREATE TABLE `consumers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `label` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (41.3ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `confirmation_token` varchar(128), `remember_token` varchar(128), `email_confirmed` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (24.7ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (23.5ms)[0m   [0mCREATE INDEX `index_users_on_id_and_confirmation_token` ON `users` (`id`, `confirmation_token`)[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091208161428')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091205164002')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091205195959')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP DATABASE IF EXISTS `masthead_test`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE DATABASE `masthead_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.2ms)[0m   [0mCREATE TABLE `consumers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `label` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE `user_invites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `invite_code` varchar(40), `invited_at` datetime, `redeemed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.2ms)[0m   [0;1mCREATE INDEX `index_user_invites_on_id_and_email` ON `user_invites` (`id`, `email`)[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE INDEX `index_user_invites_on_id_and_invite_code` ON `user_invites` (`id`, `invite_code`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `encrypted_password` varchar(128), `salt` varchar(128), `confirmation_token` varchar(128), `remember_token` varchar(128), `email_confirmed` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (13.5ms)[0m   [0mCREATE INDEX `index_users_on_id_and_confirmation_token` ON `users` (`id`, `confirmation_token`)[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCREATE INDEX `index_users_on_remember_token` ON `users` (`remember_token`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091208161428')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091205164002')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091205195959')[0m

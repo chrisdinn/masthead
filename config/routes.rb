@@ -8,4 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.resources :passwords, :collection => { :success => :get }
   map.resources :user_invites
+  
+  map.resources :consumers
 end

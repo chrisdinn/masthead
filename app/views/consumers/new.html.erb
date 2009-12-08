@@ -1,0 +1,8 @@
+<h1>Add consumer</h1>
+<% semantic_form_for(@consumer) do |form| %>
+	<% form.inputs do %>
+		<%= form.input :label %>
+		<%= form.input :url %>
+	<% end %>
+	<%= form.submit "Add consumer" %>
+<% end %>
