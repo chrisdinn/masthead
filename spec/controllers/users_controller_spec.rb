@@ -4,7 +4,8 @@ describe UsersController do
   
   describe "GET to /users" do
     before(:each) do
-      get :index, {}, :checkpoint_user_id => 1
+      @current_user = Factory(:user)
+      get :index, {}, :checkpoint_user_id => @current_user.id
     end
     
     it { should assign_to(:users) }

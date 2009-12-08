@@ -4,8 +4,8 @@ class UsersController < Clearance::UsersController
   skip_before_filter :verify_authenticity_token
   
   def index
-    @users = ::User.all
-    @user_invites = ::UserInvite.all
+    @users = User.all
+    @user_invites = UserInvite.all
   end
   
   def create
