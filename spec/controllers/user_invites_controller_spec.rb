@@ -4,7 +4,7 @@ describe UserInvitesController do
   
   describe "GET to new" do
     before(:each) do
-      get :new
+      get :new, {}, :checkpoint_user_id => 1
     end
     
     it { should assign_to(:user_invite).with_kind_of(UserInvite) }

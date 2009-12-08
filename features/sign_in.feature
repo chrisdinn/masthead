@@ -2,37 +2,31 @@ Feature: Sign in
   In order to get access to protected sections of the site
   A user
   Should be able to sign in
-	
-	@checkpoint
-    Scenario: User is not signed up
-      Given no user exists with an email of "email@person.com"
-      When I visit the sign in page
-      And I sign in as "email@person.com/password"
-      Then I should be redirected to the login page
-      And I should be signed out
 
-	@checkpoint
-    Scenario: User is not confirmed
-      Given I signed up with "email@person.com/password"
-      When I visit the sign in page
-      And I sign in as "email@person.com/password"
-      Then I should be redirected to the login page
-      And I should be signed out
+	    Scenario: User is not signed up
+	      Given no user exists with an email of "email@person.com"
+	      When I go to the sign in page
+	      And I sign in as "email@person.com/password"
+	      Then I should see "You need to log in"
+	      And I should be signed out
 
-	@checkpoint
-   	Scenario: User enters wrong password
-      Given I am signed up and confirmed as "email@person.com/password"
-      When I visit the sign in page
-      And I sign in as "email@person.com/wrongpassword"
-      Then I should be redirected to the login page
-      And I should be signed out
+	    Scenario: User is not confirmed
+	      Given I signed up with "email@person.com/password"
+	      When I go to the sign in page
+	      And I sign in as "email@person.com/password"
+	      Then I should see "You need to log in"
+	      And I should be signed out
 
-	@checkpoint
-   	Scenario: User signs in successfully
-      Given I am signed up and confirmed as "email@person.com/password"
-      When I visit the sign in page
-      And I sign in as "email@person.com/password"
-      And I should be signed in
-      When I return next time
-      Then I should be signed in
+	   Scenario: User enters wrong password
+	      Given I am signed up and confirmed as "email@person.com/password"
+	      When I go to the sign in page
+	      And I sign in as "email@person.com/wrongpassword"
+	      Then I should see "You need to log in"
+	      And I should be signed out
+
+	   Scenario: User signs in successfully
+	      Given I am signed up and confirmed as "email@person.com/password"
+	      When I go to the sign in page
+	      And I sign in as "email@person.com/password"
+	      And I should be signed in
 

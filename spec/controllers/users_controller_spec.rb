@@ -4,7 +4,7 @@ describe UsersController do
   
   describe "GET to /users" do
     before(:each) do
-      get :index
+      get :index, {}, :checkpoint_user_id => 1
     end
     
     it { should assign_to(:users) }

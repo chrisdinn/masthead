@@ -2492,3 +2492,403 @@ Rendering users/index
   [4;35;1mUserInvite Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
 Rendered layouts/_flashes (0.1ms)
 Completed in 19ms (View: 5, DB: 5) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 19:40:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to http://localhost:3000/sso/login
+Filter chain halted as [:go_sign_in] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mCheckpoint::User Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mCheckpoint::User Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'chris@hotink.net') LIMIT 1[0m
+  [4;36;1mCheckpoint::User Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 19:40:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_flashes (1.0ms)
+Completed in 59ms (View: 36, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 19:41:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_flashes (0.2ms)
+Completed in 32ms (View: 9, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 19:41:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to http://localhost:3000/sso/login
+Filter chain halted as [:go_sign_in] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'chris@hotink.net') LIMIT 1[0m
+  [4;36;1mCheckpoint::User Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 19:41:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mCheckpoint::User Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_flashes (0.2ms)
+Completed in 32ms (View: 9, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 19:43:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to http://0.0.0.0:3000/sso/login
+Filter chain halted as [:go_sign_in] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://0.0.0.0/]
+  [4;35;1mSQL (330.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (62.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 21:20:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to http://0.0.0.0:3000/sso/login
+Filter chain halted as [:go_sign_in] rendered_or_redirected.
+Completed in 195ms (DB: 392) | 302 Found [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCheckpoint::User Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'chris@hotink.net') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mCheckpoint::User Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'chris@hotink.net') LIMIT 1[0m
+  [4;35;1mCheckpoint::User Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 22:42:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mCheckpoint::User Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUserInvite Load (0.7ms)[0m   [0;1mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Columns (17.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUserInvite Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_flashes (0.7ms)
+Completed in 70ms (View: 15, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-07 22:42:26) [GET]
+  [4;36;1mCheckpoint::User Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUserInvite Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 161ms (View: 143, DB: 2) | 200 OK [http://localhost/user_invites/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-07 22:42:36) [POST]
+  Parameters: {"user_invite"=>{"email"=>"chris@gmail.com"}, "commit"=>"Send invitation", "authenticity_token"=>"Nobx8/iAIlJ+CWmBSh4aDEAvlITA/WONQpksQP4FHSM="}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.1ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#index (for 127.0.0.1 at 2009-12-07 22:43:45) [GET]
+  [4;36;1mCheckpoint::User Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+ActionController::UnknownAction (No action responded to index. Actions: absolute_url, create, current_user, new, and signed_in?):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-07 22:45:38) [POST]
+  Parameters: {"user_invite"=>{"email"=>"chris@gmail.com"}, "commit"=>"Send invitation", "authenticity_token"=>"Nobx8/iAIlJ+CWmBSh4aDEAvlITA/WONQpksQP4FHSM="}
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUserInvite Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chris@gmail.com') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.3ms)[0m   [0mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-08 03:45:39', NULL, NULL, '2009-12-08 03:45:39', NULL, 'chris@gmail.com')[0m
+  [4;36;1mUserInvite Load (0.5ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chris@gmail.com' AND `user_invites`.id <> 3) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `updated_at` = '2009-12-08 03:45:39', `created_at` = '2009-12-08 03:45:39', `email` = 'chris@gmail.com', `invite_code` = 'adc422fae82b7fce8337781205280b0d46bb9279' WHERE `id` = 3[0m
+Sent mail to chris@gmail.com
+
+Date: Mon, 7 Dec 2009 22:45:39 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: chris@gmail.com
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1dcbe341976_a0ce8199867c15d
+
+
+--mimepart_4b1dcbe341976_a0ce8199867c15d
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/adc422fae82b7fce8337781205280b0d46bb9=
+279">Start using Hot Ink</a>=
+
+--mimepart_4b1dcbe341976_a0ce8199867c15d--
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 371ms (DB: 4) | 302 Found [http://localhost/user_invites]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 22:45:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_flashes (0.2ms)
+Completed in 36ms (View: 11, DB: 5) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-07 22:46:12) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"adc422fae82b7fce8337781205280b0d46bb9279", "controller"=>"users"}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (12.0ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 90ms (View: 78, DB: 2) | 200 OK [http://localhost/sign_up/adc422fae82b7fce8337781205280b0d46bb9279]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-07 22:46:31) [POST]
+  Parameters: {"commit"=>"Start using Hot Ink", "action"=>"create", "authenticity_token"=>"TMSue0pgS8odhzL+IQnhvzO5X2njLxVTc0snrqb29w4=", "invite_code"=>"adc422fae82b7fce8337781205280b0d46bb9279", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mark@allen.com"}}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.9ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-07 22:47:04) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"adc422fae82b7fce8337781205280b0d46bb9279", "controller"=>"users"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (11.6ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 33ms (View: 20, DB: 1) | 200 OK [http://localhost/sign_up/adc422fae82b7fce8337781205280b0d46bb9279]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-07 22:47:15) [POST]
+  Parameters: {"commit"=>"Start using Hot Ink", "action"=>"create", "authenticity_token"=>"v7kQ5GWFYgnnmPo5cQ7hJaYYEkTmxYxcZPv9337VOBY=", "invite_code"=>"adc422fae82b7fce8337781205280b0d46bb9279", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mark@allen.com"}}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'mark@allen.com') LIMIT 1[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'adc422fae82b7fce8337781205280b0d46bb9279' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Create (21.8ms)[0m   [0mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('a559b9a6ff323c19987d85b9f7dee7b342ced824', '2ddfa796ca9fd5b294882e364a418cc370e07b98', '2009-12-08 03:47:16', '2009-12-08 03:47:16', NULL, 'ba1bdaed27df68df1cf34bd0d04e48d7d69f07c4', 0, 'mark@allen.com')[0m
+  [4;36;1mUserInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'adc422fae82b7fce8337781205280b0d46bb9279' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;35;1mUserInvite Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'chris@gmail.com' AND `user_invites`.id <> 3) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.3ms)[0m   [0mUPDATE `user_invites` SET `updated_at` = '2009-12-08 03:47:16', `redeemed_at` = '2009-12-08 03:47:16' WHERE `id` = 3[0m
+  [4;36;1mSQL (30.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed in 396ms (DB: 56) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-12-07 22:47:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/sso/login
+Filter chain halted as [:go_sign_in] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'mark@allen.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mCheckpoint::User Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'mark@allen.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#new (for 127.0.0.1 at 2009-12-07 22:49:40) [GET]
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUserInvite Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+Rendering template within layouts/user_invites
+Rendering user_invites/new
+Completed in 26ms (View: 8, DB: 2) | 200 OK [http://localhost/user_invites/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserInvitesController#create (for 127.0.0.1 at 2009-12-07 22:49:51) [POST]
+  Parameters: {"user_invite"=>{"email"=>"seven@oclock.ca"}, "commit"=>"Send invitation", "authenticity_token"=>"uNze5IeWTy2Ecz0WfLWKrL9i4aKCvYZVDVna0WfPJEw="}
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUserInvite Columns (195.6ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUserInvite Load (0.2ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'seven@oclock.ca') LIMIT 1[0m
+  [4;35;1mUserInvite Create (0.2ms)[0m   [0mINSERT INTO `user_invites` (`created_at`, `invited_at`, `redeemed_at`, `updated_at`, `invite_code`, `email`) VALUES('2009-12-08 03:49:52', NULL, NULL, '2009-12-08 03:49:52', NULL, 'seven@oclock.ca')[0m
+  [4;36;1mUserInvite Load (0.4ms)[0m   [0;1mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'seven@oclock.ca' AND `user_invites`.id <> 4) LIMIT 1[0m
+  [4;35;1mUserInvite Update (0.2ms)[0m   [0mUPDATE `user_invites` SET `updated_at` = '2009-12-08 03:49:52', `created_at` = '2009-12-08 03:49:52', `email` = 'seven@oclock.ca', `invite_code` = 'ff546e6e2789ad9ad576d0918e0934c4aab06d1d' WHERE `id` = 4[0m
+Sent mail to seven@oclock.ca
+
+Date: Mon, 7 Dec 2009 22:49:52 -0500
+From: Hot Ink <do_not_reply@hotink.net>
+To: seven@oclock.ca
+Subject: You've been invited to use Hot Ink
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4b1dcce012cc6_a0ce8197b9f033c
+
+
+--mimepart_4b1dcce012cc6_a0ce8197b9f033c
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<h1>Use Hot Ink</h1>
+<a href=3D"http://localhost/sign_up/ff546e6e2789ad9ad576d0918e0934c4aab06=
+d1d">Start using Hot Ink</a>=
+
+--mimepart_4b1dcce012cc6_a0ce8197b9f033c--
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 246ms (DB: 198) | 302 Found [http://localhost/user_invites]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-07 22:49:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mCheckpoint::User Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUserInvite Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `user_invites`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_flashes (0.2ms)
+Completed in 33ms (View: 10, DB: 3) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-07 22:50:25) [GET]
+  Parameters: {"action"=>"new", "invite_code"=>"ff546e6e2789ad9ad576d0918e0934c4aab06d1d", "controller"=>"users"}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_inputs (11.2ms)
+Rendered layouts/_flashes (0.2ms)
+Completed in 32ms (View: 20, DB: 2) | 200 OK [http://localhost/sign_up/ff546e6e2789ad9ad576d0918e0934c4aab06d1d]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-07 22:50:38) [POST]
+  Parameters: {"commit"=>"Start using Hot Ink", "action"=>"create", "authenticity_token"=>"KSCaXtLXZzhjcYcdC1XmgSft8wIxQp87NxGLghzezjE=", "invite_code"=>"ff546e6e2789ad9ad576d0918e0934c4aab06d1d", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"me@chrisdinn.ca"}}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'me@chrisdinn.ca') LIMIT 1[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'ff546e6e2789ad9ad576d0918e0934c4aab06d1d' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('98f09cb0829771afd30dc543af151ea3ba918b37', '322dc5b2bbac00acb98ee1bd1023d6bfc0ea85e4', '2009-12-08 03:50:38', '2009-12-08 03:50:38', NULL, '0bad7b092b43d428e4a3d2120cd6541e803bd467', 0, 'me@chrisdinn.ca')[0m
+  [4;35;1mUserInvite Load (0.2ms)[0m   [0mSELECT * FROM `user_invites` WHERE (`user_invites`.`invite_code` = 'ff546e6e2789ad9ad576d0918e0934c4aab06d1d' AND `user_invites`.`redeemed_at` IS NULL) LIMIT 1[0m
+  [4;36;1mUserInvite Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `user_invites`[0m
+  [4;35;1mUserInvite Load (0.3ms)[0m   [0mSELECT `user_invites`.id FROM `user_invites` WHERE (`user_invites`.`email` = BINARY 'seven@oclock.ca' AND `user_invites`.id <> 4) LIMIT 1[0m
+  [4;36;1mUserInvite Update (0.2ms)[0m   [0;1mUPDATE `user_invites` SET `updated_at` = '2009-12-08 03:50:38', `redeemed_at` = '2009-12-08 03:50:38' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed in 40ms (DB: 5) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-12-07 22:50:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/sso/login
+Filter chain halted as [:go_sign_in] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/session/new]

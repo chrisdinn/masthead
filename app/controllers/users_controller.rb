@@ -1,5 +1,8 @@
 class UsersController < Clearance::UsersController
   
+  skip_before_filter :go_sign_in, :only => [:new, :create]
+  skip_before_filter :verify_authenticity_token
+  
   def index
     @users = ::User.all
     @user_invites = ::UserInvite.all

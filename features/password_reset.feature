@@ -25,6 +25,7 @@ Feature: Password reset
       Given I signed up with "email@person.com/password"
       When I follow the password reset link sent to "email@person.com"
       And I update my password with "newpassword/newpassword"
+	  And I sign in as "email@person.com/newpassword"
       Then I should be signed in
       When I sign out
       Then I should be signed out
