@@ -5,5 +5,6 @@ require 'sinatra/base'
 class CheckpointMetal < Sinatra::Base
   disable :raise_errors
   helpers Checkpoint::Authentication
+  register Checkpoint::OpenIDServer
   use Checkpoint::Sessions::App 
 end
